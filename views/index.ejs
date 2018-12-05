@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MY APP</title>
+</head>
+<body>
+FOOD
+  <form action="/food" method="POST">
+  <input type="text" placeholder="Your Name" name="user">
+  <input type="text" placeholder="Food" name="food">
+  <button type="submit">Submit</button>
+</form>
+</body>
+</html>
+<ul class="food">
+    <table class = "food" border="1px">
+      <tr>
+        <th>Name</th>
+        <th>Favorite Food</th>
+      </tr>
+  <% for(var i=0; i<food.length; i++) {%>
+  <tr>
+    <td><%= food[i].name%>
+    </td>
+    <td><%= food[i].food %></td>
+    <td><form method="post" action ="/delete">
+    <input type= "hidden" name="buttonId" value= "<%=food[i].id%>">
+    <button type= "submit" value ="delete">delete</button></form>
+    </td>
+    <td><form method="post" action="/update">
+    <input type= "hidden" name="buttonId2" value= "<%=food[i].id%>">
+    <button id="update">update</button></form>
+    </td>
+  </tr>
+  <% }%>
+</ul>
+
+</body>
