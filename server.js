@@ -10,7 +10,7 @@ var db
 MongoClient.connect('mongodb://phildierks:4phillip@ds151943.mlab.com:51943/food', (err, client) => {
   if (err) return console.log(err)
    db = client.db('food')
-   app.listen(3000, () => {
+   app.listen(port, () => {
      console.log('listening on 3000')
    })
    app.get('/', (req, res) => {
